@@ -1,0 +1,40 @@
+{
+  "name": "athletes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "postgres": "docker run -p 5432:5432 --name postgres_database --rm --env POSTGRES_PASSWORD=postgres --env POSTGRES_DB=athletes postgres",
+    "migrate": "sequelize db:migrate",
+    "migrate:undo": "sequelize db:migrate:undo",
+    "seed": "npx sequelize-cli db:seed:all",
+    "eslint": "eslint ./",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surovv/athletes.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/surovv/athletes/issues"
+  },
+  "homepage": "https://github.com/surovv/athletes#readme",
+  "dependencies": {
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.12",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-plugin-import": "^2.20.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base"
+    ]
+  }
+}
