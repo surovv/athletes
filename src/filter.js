@@ -31,7 +31,6 @@ module.exports = ({
       attributes: ['id', 'name', 'birthdate'],
       include: [
         {
-          required: true,
           model: db.Skill,
           where: (skillsIds && {
             id: skillsIds,
@@ -39,6 +38,7 @@ module.exports = ({
           attributes: ['title'],
         },
         {
+          required: true,
           model: db.Championship,
           attributes: ['title'],
         },
